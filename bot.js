@@ -31,4 +31,12 @@ client.on('message', message => {
     }
     });
 
+client.on('message', message => {
+    if(message.content.startsWith('!say')) {
+    if(message.author.id !== "349046898562170883") return;
+    var args = message.content.split(' ').slice(1).join(' ');
+    message.channel.send(args);
+    }
+    });
+
 client.login(process.env.BOT_TOKEN);
